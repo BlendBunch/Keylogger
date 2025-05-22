@@ -29,7 +29,7 @@ LRESULT CALLBACK stuff(int nCode, WPARAM wParam, LPARAM lParam)
 
 
 
-
+		//letter handling unfinished, debugging as of now.
 			switch(virtualKey)
 			{
 				
@@ -49,7 +49,7 @@ LRESULT CALLBACK stuff(int nCode, WPARAM wParam, LPARAM lParam)
 					strcpy(charAppend, "<SPACE>");
 					break;
 				default:
-					if(charAppend[0] != 0){
+					if(letter != 0){
 						charAppend[0] = (char)letter;
 					}
 			}
